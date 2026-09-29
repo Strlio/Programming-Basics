@@ -12,7 +12,7 @@ namespace Aufgabe_08
             Comment = Console.ReadLine();
 
 
-            string[] forbiddenWords = { "viagra", "sex", "porno", "fick", "schlampe", "arsch", "test" };
+            string[] forbiddenWords = { "viagra", "sex", "porno", "fick", "schlampe", "arsch"};
 
 
             for (int i = 0; i < forbiddenWords.Length; i++)
