@@ -17,7 +17,6 @@
                     {
                         Console.WriteLine("Quersumme wird berechnet...");
                         BerechneQuersumme(zahl1, zahl2);
-                        //Console.WriteLine("Die quersumme ist: " + ergebnis);
                     }
                     else
                     {
@@ -67,7 +66,7 @@
                     currentNum++;
                 }
             }
-            else //dass man die zahlen auch rückwärts eingeben kann
+            else //dass man die zahlen auch rückwärts eingeben kann => versuche es.
             {
                 currentNum = zahl2;
                 while(currentNum !<= zahl1)

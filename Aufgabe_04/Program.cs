@@ -16,6 +16,12 @@ namespace Aufgabe_04
                 {
                     if(zahl is >= 1 and <= 12)
                     {
+                        string[] month= new string[] {"Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember" };
+                        Console.WriteLine("Monat: " + month[zahl -1]);
+
+
+
+
                         switch (zahl)
                         {
                             case 1:
@@ -49,13 +55,13 @@ namespace Aufgabe_04
                                 Console.WriteLine("Monat: Oktober");
                                 break;
                             case 11:
-                                Console.WriteLine("Monat: September");
+                                Console.WriteLine("Monat: November");
                                 break;
                             case 12:
                                 Console.WriteLine("Monat: Dezember");
                                 break;
 
-                        }
+                        } //ich habe gehört das ihr einen array lieber habt :)
                     }
                     else
                     {
@@ -66,7 +72,7 @@ namespace Aufgabe_04
                 }
                 else
                 {
-                    Console.WriteLine("Ungültige eingabe, versuchen sie es erneut");
+                    Console.WriteLine("Ungültige eingabe, es muss eine zahl sein, versuchen sie es erneut");
                 }
             } while (invalid);
         }

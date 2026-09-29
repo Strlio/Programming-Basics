@@ -10,7 +10,15 @@
             {
                 if((i % 3) == 0 || (i % 5) == 0)
                 {
-                    Console.Write(i + ", ");
+                    if(i == 30)
+                    {
+                        Console.Write(i);
+                    }
+                    else
+                    {
+                        Console.Write(i + ", ");
+                    }
+                    
                 }
             }
 
