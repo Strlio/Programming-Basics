@@ -20,7 +20,7 @@
                 
                 string[] eingabeArray = eingabe.Split(',');
                 int[] input = new int[eingabeArray.Length];
-
+                //int[] output = new int[eingabeArray.Length];
                 for (int i = 0; i < eingabeArray.Length; i++)
                 {
                     if (int.TryParse(eingabeArray[i], out input[i]))
@@ -34,22 +34,38 @@
                         break;
                     }
                 }
-                SumUp(input);
+                PrintArray(SumUp(input));
+                
 
-                /*for (int o = 0; o < eingabeArray.Length; o++)
-                {
-                    Console.WriteLine(input[o]);
-                }
-                Console.WriteLine(invalid);*/
+
+                
             } while (invalid);
+
+
+            Console.ReadLine(); //macht dass das programm nicht direkt abstürzt
         }
 
         
         static int[] SumUp(int[] input)
         {
             int[] output = new int[input.Length];
-            //und was soll ich bitte mit den zahlen machen??????????????!!!!!
+            int sum = 0;
+            
+            for(int i = 0; i < input.Length; i++)
+            {
+                sum += input[i];
+                output[i] = sum;
+            }
+
             return output;
+        }
+
+        static void PrintArray(int[] input)
+        {
+            for(int i = 0; i < input.Length; i++)
+            {
+                Console.Write("[" + i + "] -> " + input[i] + ", ");
+            }
         }
     }
 }
