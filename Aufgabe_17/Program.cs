@@ -49,12 +49,12 @@
 
         static int[] SortArray(int[] input)
         {
-            bool sortet = true; // sortet true == nicht sortiert
+            bool sorted = true; // sortet true == nicht sortiert
             bool error = false;
             int[] output = new int[input.Length];
             output = input;
             int cache = 0;
-            while (sortet)
+            while (sorted)
             {
                 for(int i = 0; i <= input.Length - 1; i++)
                 {
@@ -83,7 +83,7 @@
                         }
                         if(error == false)
                         {
-                            sortet = false;
+                            sorted = false;
                         }
                     }
                     
