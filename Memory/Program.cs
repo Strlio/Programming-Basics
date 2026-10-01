@@ -6,8 +6,6 @@
     }
     internal class Program
     {
-        public static bool[,] completetBoolArray = new bool[4, 4];
-        public static bool[,] selectetFields = new bool[4, 4];
         static void Main(string[] args)
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;
@@ -16,6 +14,8 @@
             Console.WriteLine("Z.Bsp.: 2142 dekt das Symbol in Zeile 2 u. Spalte 1 auf sowie das Symbol in Zeile 4 u. Spalte 2.");
             
             char[,] charPos = new char[4, 4];
+            bool[,] completetBoolArray = new bool[4, 4];
+            bool[,] selectetFields = new bool[4, 4];
             char[] chars = {'#', '♦','♥', '♫', '☻', '▲', '◄', '§',};
             bool updateBoard = true, gameRunning = true, invalid = false;
             var (posX, posY) = (0, 0);
