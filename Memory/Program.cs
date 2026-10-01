@@ -1,18 +1,24 @@
 ﻿namespace Memory
 {
+    public class Speicher
+    {
+        
+    }
     internal class Program
     {
+        public static bool[,] completetBoolArray = new bool[4, 4];
+        public static bool[,] selectetFields = new bool[4, 4];
         static void Main(string[] args)
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             Console.WriteLine("MEMORY -> Hinter den '?' verstecken sich Symbole, die paarweise vorkommen. Finden Sie diese!");
             Console.WriteLine("Zum Aufdecken wählen Sie zwei Positionen in der Form: Zeile1Spalte1Zeil12Spalte2.");
             Console.WriteLine("Z.Bsp.: 2142 dekt das Symbol in Zeile 2 u. Spalte 1 auf sowie das Symbol in Zeile 4 u. Spalte 2.");
-            bool[,] completetBoolArray = new bool[4, 4]; // gelöste karten
-            bool[,] selectetFields = new bool[4, 4]; //umgedrehte karten
+            
             char[,] charPos = new char[4, 4];
             char[] chars = {'#', '♦','♥', '♫', '☻', '▲', '◄', '§',};
-            bool updateBoard = true;
+            bool updateBoard = true, gameRunning = true, invalid = false;
+            var (posX, posY) = (0, 0);
             Console.WriteLine("");
             Console.WriteLine("");
 
@@ -22,10 +28,30 @@
                 charPos = AssignSymbols(chars);
                 updateBoard = false;
             }
+            //var (posX, posY) = RequestInput(1, true);
+            //Console.WriteLine($"X: {posX}   Y: {posY}"); // test ob pos funktionieren
+            do
+            {
+                do
+                {
+                    invalid = false;
+                    (posX, posY) = RequestInput(true);
+                    Console.WriteLine($"X:{posX}  Y: {posY}");
+                    if(!IsFieldComplete(posX, posY, completetBoolArray))
+                    {
+                        selectetFields[posX, posY] = true;
+                        PrintBoard(completetBoolArray, charPos, selectetFields);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Dieses feld is nicht mehr verfügbar, wähle ein anderes");
+                        invalid = true;
+                        continue;
+                    }
+                } while (invalid);
+                
 
-            var (posX, posY) = RequestInput(1, true);
-            Console.WriteLine($"X: {posX}   Y: {posY}");
-
+            } while (gameRunning);
             
             PrintBoard(completetBoolArray, charPos, selectetFields);
             Console.ReadLine();
@@ -72,9 +98,7 @@
                             else
                             {
                                 Console.Write(" ? |");
-                            }
-                                
-                        }
+                            }                        }
                     }
                 }
                 else
@@ -86,7 +110,7 @@
             }
         }
 
-        public static (int, int)RequestInput(int player, bool firstCard)
+        public static (int, int)RequestInput(bool firstCard)
         {
             string input;
             string[] inputs;
@@ -98,11 +122,11 @@
                 invalid = false;
                 if (firstCard)
                 {
-                    Console.WriteLine("Welche karte möchtest du aufdecken?");
+                    Console.WriteLine("Welche karte möchtest du aufdecken? (- |)");
                 }
                 else
                 {
-                    Console.WriteLine("Welche karte möchtest du als zweites aufdecken(x y)");
+                    Console.WriteLine("Welche karte möchtest du als zweites aufdecken (- |)");
                 }
 
                 input = Console.ReadLine();
@@ -122,6 +146,8 @@
                     }
                 }
             } while (invalid);
+            coordinates[0] -= 1;
+            coordinates[1] -= 1;
             return (coordinates[0], coordinates[1]);
         }
 
@@ -155,6 +181,18 @@
                 k++;
             }
             return charPos;
+        }
+
+        static bool IsFieldComplete(int x, int y, bool[,] completetBoolArray)
+        {
+            if (completetBoolArray[x, y])
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
