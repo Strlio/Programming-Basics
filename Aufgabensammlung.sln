@@ -51,6 +51,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Memory", "Memory\Memory.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quiz eufgabe Vorschlag 1", "Quiz eufgabe Vorschlag 1\Quiz eufgabe Vorschlag 1.csproj", "{CEFD5BDC-84C4-4105-B4A4-F90ECABD613F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufgabe aufsummieren", "Aufgabe aufsummieren\Aufgabe aufsummieren.csproj", "{BAEAE29B-5EAD-4FFE-9987-794B3B97A7F4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -153,6 +155,10 @@ Global
 		{CEFD5BDC-84C4-4105-B4A4-F90ECABD613F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEFD5BDC-84C4-4105-B4A4-F90ECABD613F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CEFD5BDC-84C4-4105-B4A4-F90ECABD613F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAEAE29B-5EAD-4FFE-9987-794B3B97A7F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAEAE29B-5EAD-4FFE-9987-794B3B97A7F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAEAE29B-5EAD-4FFE-9987-794B3B97A7F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAEAE29B-5EAD-4FFE-9987-794B3B97A7F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
