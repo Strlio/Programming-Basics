@@ -127,8 +127,8 @@
         {
             Console.Clear();
             Console.WriteLine("MEMORY -> Hinter den '?' verstecken sich Symbole, die paarweise vorkommen. Finden Sie diese!");
-            Console.WriteLine("Zum Aufdecken wählen Sie zwei Positionen in der Form: Zeile1Spalte1Zeil12Spalte2.");
-            Console.WriteLine("Z.Bsp.: 2142 dekt das Symbol in Zeile 2 u. Spalte 1 auf sowie das Symbol in Zeile 4 u. Spalte 2.");
+            Console.WriteLine("Zum Aufdecken wählen Sie zwei Positionen in der Form: Zeile1 palte1.");
+            Console.WriteLine("Z.Bsp.: 2 1 dekt das Symbol in Zeile 2 u. Spalte 1 auf");
             Console.WriteLine("");
             Console.WriteLine("");
 
