@@ -16,51 +16,45 @@
                     ConsoleKeyInfo taste = Console.ReadKey(intercept: true);
                     input = Console.ReadLine();
 
-                    if(input == "q")
+                    if (input.ToLower() == "q")
                     {
                         repeat = false;
                         break;
                     }
 
                     string[] inputs = input.Split('+', '-', '*', '/', '%');
-                    if (int.TryParse(inputs[0], out operand1) && inputs.Length !<=2)
-                    {
-
-                    }
-                    else
+                    if (!(int.TryParse(inputs[0], out operand1) && inputs.Length !<=2))
                     {
                         invalid = true;
                         Console.WriteLine("Ungültige eingabe, es muss eine Zahl sein -> versuche es erneut");
                         continue;
                     }
-                    if (int.TryParse(inputs[1], out operand2))
-                    {
 
-                    }
-                    else
+                    if (!int.TryParse(inputs[1], out operand2))
                     {
                         invalid = true;
                         Console.WriteLine("Ungültige eingabe, es muss eine Zahl sein -> versuche es erneut");
                         continue;
                     }
                 } while (invalid);
+               
                 if (input.Contains('+'))
                 {
                     output = operand1 + operand2;
                     Console.WriteLine(output);
                 }
-                else if(input.Contains('-'))
+                else if (input.Contains('-'))
                 {
                     output = operand1 - operand2;
                     Console.WriteLine(output);
 
                 }
-                else if(input.Contains('*'))
+                else if (input.Contains('*'))
                 {
                     output = operand1 * operand2;
                     Console.WriteLine(output);
                 }
-                else if(input.Contains('/'))
+                else if (input.Contains('/'))
                 {
                     try
                     {
@@ -70,13 +64,14 @@
                     catch (DivideByZeroException ex)
                     {
                         Console.WriteLine("Du kannst nicht durch null teilen");
-                    }catch (Exception ex)
+                    } 
+                    catch (Exception ex)
                     {
                         Console.WriteLine("unbehandelter Fehler: " + ex);
                     }
                     
                 }
-                else if(input.Contains('%'))
+                else if (input.Contains('%'))
                 {
                     try
                     {
