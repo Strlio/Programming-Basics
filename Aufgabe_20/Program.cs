@@ -16,7 +16,7 @@
                     ConsoleKeyInfo taste = Console.ReadKey(intercept: true);
                     input = Console.ReadLine();
 
-                    if (input == "q")
+                    if (input.ToLower() == "q")
                     {
                         repeat = false;
                         break;
